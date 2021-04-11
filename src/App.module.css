@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
+  *,
+  *:before,
+  *::after{
+    box-sizing:inherit;
+  }
+  
+  html{
+    box-sizing:border-box;
+    font-size:62.5%;
+  }
+  
+  
+  body{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 2rem;
+  }
+
+
+/* Header */
+
+.Header{
+    display: flex;
+    border: 2px solid red;
+    justify-content: space-between;
+    padding: 3rem;
+    font-weight: 600;
+    align-items: center;
+    color: gray;
+}
+
+.Heading{
+    color: black;
+    font-weight: 800;
+    font-size: 3rem;
+}
+
+
+/* Filter box */
+
+.filterbox{
+    display: flex;
+    border: 2px solid cornflowerblue;
+    justify-content: space-between;
+    padding: 3rem;
+    align-items: center;
+}
+
+input{
+    padding: 2rem;
+    width: 30%;
+    /* border: none; */
+}
+
+.filter{
+    border: 2px solid black;
+    padding: 1rem;
+}
+
+
+/* country container */
+
+
+.countryContainer{
+    padding: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: cadetblue;
+    height: max-content;
+}
+ul{
+    list-style: none;
+}
+
+.country{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 24%;
+    height: 40rem;
+    background-color: cornsilk;
+    /* padding: 2rem; */
+}
+
+.country img{
+    background-color: burlywood;
+    height: 20rem;
+}
+
+.countryInfo{
+    padding: 2rem;
+}
