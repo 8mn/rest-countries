@@ -2,13 +2,16 @@ import styles from './App.module.css';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <header className={styles.Header}>
+        <div className={styles.headerContent}>
         <span className={styles.Heading}> Where in the world? </span>
         <div>
           Dark Mode
         </div>
+        </div>
       </header>
+    <div className={styles.App}>
       <div className={styles.filterbox}>
         <input type="text" placeholder="Search for a country..."/>
         <div>
@@ -110,6 +113,7 @@ function App() {
             </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

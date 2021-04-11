@@ -19,6 +19,12 @@
     font-size: 2rem;
   }
 
+/* App */
+.App{
+    width: 90%;
+    margin: auto;
+    background-color: darkgray;
+}
 
 /* Header */
 
@@ -26,11 +32,23 @@
     display: flex;
     border: 2px solid red;
     justify-content: space-between;
-    padding: 3rem;
+    /* padding: 3rem 9rem 3rem 9rem; */
+    padding:3rem;
     font-weight: 600;
     align-items: center;
     color: gray;
+    /* width: 100%; */
 }
+
+.headerContent{
+    margin: auto;
+    display: flex;
+    width: 93.5%;
+    border: 2px solid red;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .Heading{
     color: black;
@@ -45,13 +63,15 @@
     display: flex;
     border: 2px solid cornflowerblue;
     justify-content: space-between;
-    padding: 3rem;
+    margin-top: 7rem;
+    /* padding: 3rem; */
     align-items: center;
 }
 
 input{
     padding: 2rem;
     width: 30%;
+    font-size: 2rem;
     /* border: none; */
 }
 
@@ -65,7 +85,8 @@ input{
 
 
 .countryContainer{
-    padding: 4rem;
+    padding: 3rem;
+    padding-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -81,14 +102,17 @@ ul{
     flex-direction: column;
     border: 2px solid black;
     width: 24%;
-    height: 40rem;
+    height: 45rem;
     background-color: cornsilk;
     /* padding: 2rem; */
+    margin-bottom: 10rem;
+    border-radius: 9px;
 }
 
 .country img{
     background-color: burlywood;
-    height: 20rem;
+    height: 25rem;
+    border-radius: 9px 9px 0 0 ;
 }
 
 .countryInfo{
