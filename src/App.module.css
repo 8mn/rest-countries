@@ -80,9 +80,15 @@
 }
 
 input{
-    padding: 2rem;
+    padding:  2rem 2rem 2rem 0;
     width: 90%;
     font-size: 2rem;
+    border: none;
+    justify-self: end;
+}
+
+input:focus{
+    outline: none;
     border: none;
 }
 
@@ -103,11 +109,16 @@ input{
 .searchBar{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 30%;
     border: 2px solid black;
     /* background-color: brown; */
     box-shadow: 10px 15px 29px -19px rgb(0, 0, 0);
+}
+
+
+.searchIcon{
+    margin: auto;
 }
 
 /* country container */
@@ -120,29 +131,4 @@ input{
     flex-wrap: wrap;
     justify-content: space-between;
     height: max-content;
-}
-ul{
-    list-style: none;
-}
-
-.country{
-    display: flex;
-    flex-direction: column;
-    border: 2px solid black;
-    width: 21%;
-    height: 45rem;
-    background-color: cornsilk;
-    /* padding: 2rem; */
-    margin-bottom: 10rem;
-    border-radius: 9px;
-}
-
-.country img{
-    background-color: burlywood;
-    height: 25rem;
-    border-radius: 9px 9px 0 0 ;
-}
-
-.countryInfo{
-    padding: 2rem;
 }

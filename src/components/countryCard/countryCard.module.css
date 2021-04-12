@@ -1,0 +1,27 @@
+
+ul{
+    list-style: none;
+}
+
+.country{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    width: 21%;
+    height: 45rem;
+    /* background-color: cornsilk; */
+    /* padding: 2rem; */
+    margin-bottom: 10rem;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.country img{
+    /* background-color: burlywood; */
+    height: 25rem;
+    border-radius: 9px 9px 0 0 ;
+}
+
+.countryInfo{
+    padding: 2rem;
+}

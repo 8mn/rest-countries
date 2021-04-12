@@ -1,9 +1,44 @@
 import styles from './App.module.css';
 import { BiMoon,BiSearch,BiChevronDown } from "react-icons/bi";
+import {useState, useEffect} from 'react'
+import axios from 'axios';
+import CountryCard from './components/countryCard/CountryCard'
 
 
 
 function App() {
+
+
+
+  const [allCountries,setAllcountries] = useState([])
+
+  const fetchAllCountries = () => {
+    axios.get("https://restcountries.eu/rest/v2/all")
+    .then(res => {
+      console.log(res.data)
+      setAllcountries(allCountries.concat(res.data))})
+    }
+
+
+    const countryContainer = allCountries.map(country => {
+      return <CountryCard 
+      name ={country.name}
+      population = {country.population}
+      flag = {country.flag}
+      region = {country.region}
+      capital={country.capital}
+      />
+    })
+
+
+ useEffect(fetchAllCountries,[])
+
+
+
+
+
+
+
   return (
     <div>
       <header className={styles.Header}>
@@ -18,12 +53,12 @@ function App() {
     <div className={styles.App}>
       <div className={styles.filterbox}>
         <div className={styles.searchBar}>
-        <BiSearch />
+        <BiSearch className={styles.searchIcon} />
         <input type="text" placeholder="Search for a country..."/>
         </div>
         <div>
           <div className={styles.filter}>
-          <label for="countries">Filter by Region </label>
+          <label>Filter by Region </label>
           <BiChevronDown/>
           {/* <select name="Countries" >
             <option value="Africa">Africa</option>
@@ -35,91 +70,7 @@ function App() {
         </div>
       </div>
       <div className={styles.countryContainer}>
-        <div className={styles.country}>
-            <img src="" alt="Country flag"/>
-            <div className={styles.countryInfo}>
-            <span>Country name</span>
-              <ul>
-              <li>
-              Population: 81,770900
-              </li>
-              <li>
-              Region: Europe
-              </li>
-              <li>
-              Capital: Berlin
-              </li>
-              </ul>
-            </div>
-        </div>
-        <div className={styles.country}>
-            <img src="" alt="Country flag"/>
-            <div className={styles.countryInfo}>
-            <span>Country name</span>
-              <ul>
-              <li>
-              Population: 81,770900
-              </li>
-              <li>
-              Region: Europe
-              </li>
-              <li>
-              Capital: Berlin
-              </li>
-              </ul>
-            </div>
-        </div>
-        <div className={styles.country}>
-            <img src="" alt="Country flag"/>
-            <div className={styles.countryInfo}>
-            <span>Country name</span>
-              <ul>
-              <li>
-              Population: 81,770900
-              </li>
-              <li>
-              Region: Europe
-              </li>
-              <li>
-              Capital: Berlin
-              </li>
-              </ul>
-            </div>
-        </div>
-        <div className={styles.country}>
-            <img src="" alt="Country flag"/>
-            <div className={styles.countryInfo}>
-            <span>Country name</span>
-              <ul>
-              <li>
-              Population: 81,770900
-              </li>
-              <li>
-              Region: Europe
-              </li>
-              <li>
-              Capital: Berlin
-              </li>
-              </ul>
-            </div>
-        </div>
-        <div className={styles.country}>
-            <img src="" alt="Country flag"/>
-            <div className={styles.countryInfo}>
-            <span>Country name</span>
-              <ul>
-              <li>
-              Population: 81,770900
-              </li>
-              <li>
-              Region: Europe
-              </li>
-              <li>
-              Capital: Berlin
-              </li>
-              </ul>
-            </div>
-        </div>
+        {countryContainer}     
       </div>
     </div>
     </div>
