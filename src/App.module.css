@@ -23,14 +23,15 @@
 .App{
     width: 90%;
     margin: auto;
-    background-color: darkgray;
+    /* background-color: darkgray; */
+    overflow-y: hidden;
 }
 
 /* Header */
 
 .Header{
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-between;
     /* padding: 3rem 9rem 3rem 9rem; */
     padding:3rem;
@@ -38,13 +39,14 @@
     align-items: center;
     color: gray;
     /* width: 100%; */
+    box-shadow: 0px 5px 19px -19px rgb(0, 0, 0);
 }
 
 .headerContent{
     margin: auto;
     display: flex;
     width: 93.5%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     justify-content: space-between;
     align-items: center;
 }
@@ -56,41 +58,67 @@
     font-size: 3rem;
 }
 
+.toggleDark{
+    display: flex;
+    align-items: center;
+    width: 13rem;
+    /* background-color: burlywood ; */
+    justify-content: space-around;
+}
+
 
 /* Filter box */
 
 .filterbox{
     display: flex;
-    border: 2px solid cornflowerblue;
+    /* border: 2px solid cornflowerblue; */
     justify-content: space-between;
     margin-top: 7rem;
     /* padding: 3rem; */
     align-items: center;
+    
 }
 
 input{
     padding: 2rem;
-    width: 30%;
+    width: 90%;
     font-size: 2rem;
-    /* border: none; */
+    border: none;
 }
 
 .filter{
     border: 2px solid black;
     padding: 1rem;
+    display: flex;
+    align-items: center;
 }
 
+/* .filterDropdown{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+
+.searchBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 30%;
+    border: 2px solid black;
+    /* background-color: brown; */
+    box-shadow: 10px 15px 29px -19px rgb(0, 0, 0);
+}
 
 /* country container */
 
 
 .countryContainer{
-    padding: 3rem;
+    /* padding: 3rem; */
     padding-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: cadetblue;
     height: max-content;
 }
 ul{
@@ -101,7 +129,7 @@ ul{
     display: flex;
     flex-direction: column;
     border: 2px solid black;
-    width: 24%;
+    width: 21%;
     height: 45rem;
     background-color: cornsilk;
     /* padding: 2rem; */

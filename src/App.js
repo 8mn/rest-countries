@@ -1,4 +1,7 @@
 import styles from './App.module.css';
+import { BiMoon,BiSearch,BiChevronDown } from "react-icons/bi";
+
+
 
 function App() {
   return (
@@ -6,17 +9,22 @@ function App() {
       <header className={styles.Header}>
         <div className={styles.headerContent}>
         <span className={styles.Heading}> Where in the world? </span>
-        <div>
+        <div className={styles.toggleDark}>
+          <BiMoon />
           Dark Mode
         </div>
         </div>
       </header>
     <div className={styles.App}>
       <div className={styles.filterbox}>
+        <div className={styles.searchBar}>
+        <BiSearch />
         <input type="text" placeholder="Search for a country..."/>
+        </div>
         <div>
           <div className={styles.filter}>
-          <label for="countries">Filter by Region</label>
+          <label for="countries">Filter by Region </label>
+          <BiChevronDown/>
           {/* <select name="Countries" >
             <option value="Africa">Africa</option>
             <option value="America">America</option>
