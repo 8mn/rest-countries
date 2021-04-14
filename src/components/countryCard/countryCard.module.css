@@ -24,4 +24,20 @@ ul{
 
 .countryInfo{
     padding: 2rem;
+    /* background-color: yellowgreen; */
+    height: 100%;
+}
+
+
+.InfoList{
+    margin-top: 20px;
+}
+
+
+.countryName{
+    font-weight: 800;
+    font-size: 2.5rem;
+    text-align: center;
+    /* background-color:yellow ; */
+    margin-bottom: 20px;
 }

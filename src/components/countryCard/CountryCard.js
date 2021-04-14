@@ -5,20 +5,25 @@ import classes from './countryCard.module.css'
 function CountryCard(props) {
 
 
+    const displayCountryPage = () => {
+        console.log("huh")
+    }
+
+
     return(
-        <div className={classes.country}>
+        <div className={classes.country} onClick={displayCountryPage}>
             <img src={props.flag} alt="Country flag"/>
             <div className={classes.countryInfo}>
-            <span>{props.name}</span>
-              <ul>
-              <li>
-              Population: {props.population}
+            <span className={classes.countryName}>{props.name}</span>
+              <ul className={classes.InfoList}>
+              <li >
+             <span style={{fontWeight:'600'}}> Population: </span>{props.population}
               </li>
               <li>
-              Region: {props.region}
+              <span style={{fontWeight:'600'}}> Region:  </span>{props.region}
               </li>
               <li>
-              Capital: {props.capital}
+              <span style={{fontWeight:'600'}}> Capital:</span> {props.capital}
               </li>
               </ul>
             </div>

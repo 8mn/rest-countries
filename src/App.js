@@ -10,7 +10,10 @@ function App() {
 
 
 
+  const[showFilters,setshowFilters] = useState(false)
+
   const [allCountries,setAllcountries] = useState([])
+  const[filter,setfilter] = useState('Filter by Region')
 
   const fetchAllCountries = () => {
     axios.get("https://restcountries.eu/rest/v2/all")
@@ -22,6 +25,7 @@ function App() {
 
     const countryContainer = allCountries.map(country => {
       return <CountryCard 
+      // key={country.numericCode}
       name ={country.name}
       population = {country.population}
       flag = {country.flag}
@@ -36,8 +40,15 @@ function App() {
 
 
 
+const displayFilters = () => {
+  setshowFilters(!showFilters)
+}
 
 
+const changeLabel = (region) => {
+  setshowFilters(!showFilters)
+  setfilter(region)
+}
 
   return (
     <div>
@@ -57,18 +68,20 @@ function App() {
         <input type="text" placeholder="Search for a country..."/>
         </div>
         <div>
-          <div className={styles.filter}>
-          <label>Filter by Region </label>
+          <div className={styles.filter} onClick={displayFilters}>
+          <div >{filter}</div>
           <BiChevronDown/>
-          {/* <select name="Countries" >
-            <option value="Africa">Africa</option>
-            <option value="America">America</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-          </select> */}
           </div>
         </div>
       </div>
+          <div className={showFilters?styles.optionShow:styles.options} >
+            <span onClick={() => changeLabel('All')}>All</span>
+            <span onClick={() => changeLabel('Africa')}>Africa</span>
+            <span onClick={() => changeLabel('America')}>America</span>
+            <span onClick={() => changeLabel('Asia')}>Asia</span>
+            <span onClick={() => changeLabel('Europe')}>Europe</span>
+            <span onClick={() => changeLabel('Oceania')}>Oceania</span>
+          </div>
       <div className={styles.countryContainer}>
         {countryContainer}     
       </div>
