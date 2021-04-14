@@ -15,8 +15,15 @@ function App() {
   const [allCountries,setAllcountries] = useState([])
   const[filter,setfilter] = useState('Filter by Region')
 
-  const fetchAllCountries = () => {
-    axios.get("https://restcountries.eu/rest/v2/all")
+
+  const BASE_URL = "https://restcountries.eu/rest/v2/all"
+
+  // const FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${filter}`
+
+
+
+  const fetchAllCountries = (url) => {
+    axios.get(url)
     .then(res => {
       console.log(res.data)
       setAllcountries(allCountries.concat(res.data))})
@@ -25,7 +32,7 @@ function App() {
 
     const countryContainer = allCountries.map(country => {
       return <CountryCard 
-      // key={country.numericCode}
+      key={country.alpha3Code}
       name ={country.name}
       population = {country.population}
       flag = {country.flag}
@@ -35,7 +42,7 @@ function App() {
     })
 
 
- useEffect(fetchAllCountries,[])
+ useEffect(() =>fetchAllCountries(BASE_URL),[])
 
 
 
