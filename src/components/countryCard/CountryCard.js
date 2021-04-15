@@ -1,16 +1,25 @@
 import React from 'react'
 import classes from './countryCard.module.css'
+// import {Link,Switch,Route, Router} from 'react-router-dom'
+// import CountryPage from '../CountryPage'
 
 
 function CountryCard(props) {
 
 
     const displayCountryPage = () => {
-        console.log("huh")
+        console.log(props.name)
+        // <Switch>
+        //     <Route path=`/${props.name}`>
+
+        //     </Route>
+        // </Switch>
+        
     }
 
 
     return(
+
         <div className={classes.country} onClick={displayCountryPage}>
             <img src={props.flag} alt="Country flag"/>
             <div className={classes.countryInfo}>
