@@ -18,7 +18,7 @@ function App() {
 
   const BASE_URL = "https://restcountries.eu/rest/v2/all"
 
-  // const FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${filter}`
+  let FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${filter}`
 
 
 
@@ -26,13 +26,14 @@ function App() {
     axios.get(url)
     .then(res => {
       console.log(res.data)
-      setAllcountries(allCountries.concat(res.data))})
+      setAllcountries(res.data)})
+    .catch(err => alert(err))
     }
 
 
     const countryContainer = allCountries.map(country => {
       return <CountryCard 
-      key={country.alpha3Code}
+      // key={country.population}
       name ={country.name}
       population = {country.population}
       flag = {country.flag}
@@ -45,8 +46,6 @@ function App() {
  useEffect(() =>fetchAllCountries(BASE_URL),[])
 
 
-
-
 const displayFilters = () => {
   setshowFilters(!showFilters)
 }
@@ -55,6 +54,12 @@ const displayFilters = () => {
 const changeLabel = (region) => {
   setshowFilters(!showFilters)
   setfilter(region)
+  if(region === 'All' || region === 'Filter by Region'){
+    FILTER_BY_REGION = BASE_URL
+  }else{
+    FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${region.toLowerCase()}`
+  }
+  fetchAllCountries(FILTER_BY_REGION)
 }
 
   return (
@@ -84,7 +89,7 @@ const changeLabel = (region) => {
           <div className={showFilters?styles.optionShow:styles.options} >
             <span onClick={() => changeLabel('All')}>All</span>
             <span onClick={() => changeLabel('Africa')}>Africa</span>
-            <span onClick={() => changeLabel('America')}>America</span>
+            <span onClick={() => changeLabel('Americas')}>Americas</span>
             <span onClick={() => changeLabel('Asia')}>Asia</span>
             <span onClick={() => changeLabel('Europe')}>Europe</span>
             <span onClick={() => changeLabel('Oceania')}>Oceania</span>
