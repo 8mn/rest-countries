@@ -19,7 +19,6 @@ function CountryCard(props) {
 
 
     return(
-
         <div className={classes.country} onClick={displayCountryPage}>
             <img src={props.flag} alt="Country flag"/>
             <div className={classes.countryInfo}>

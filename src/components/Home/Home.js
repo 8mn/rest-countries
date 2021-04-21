@@ -13,6 +13,7 @@ function App() {
   const [allCountries,setAllcountries] = useState([])
   const[filter,setfilter] = useState('Filter by Region')
   const[mode,setmode] = useState('Dark Mode')
+  const[search,setsearch] = useState('')
 
 
   const BASE_URL = "https://restcountries.eu/rest/v2/all"
@@ -41,6 +42,17 @@ function App() {
       />
     })
 
+    const searchFilter = allCountries.filter(country => country.name.toLowerCase().startsWith(search))
+    const searchContainer = searchFilter.map(country => {
+      return <CountryCard 
+      // key={country.callingCodes[0]}
+      name ={country.name}
+      population = {country.population}
+      flag = {country.flag}
+      region = {country.region}
+      capital={country.capital}
+      />
+    })
 
  useEffect(() =>fetchAllCountries(BASE_URL),[])
 
@@ -85,7 +97,7 @@ const changeLabel = (region) => {
       <div className={styles.filterbox}>
         <div className={styles.searchBar}>
         <BiSearch className={styles.searchIcon} />
-        <input type="text" placeholder="Search for a country..."/>
+        <input type="text" placeholder="Search for a country..." onChange={e => setsearch(e.target.value)}/>
         </div>
         <div>
           <div className={styles.filter} onClick={displayFilters}>
@@ -103,7 +115,8 @@ const changeLabel = (region) => {
             <span onClick={() => changeLabel('Oceania')}>Oceania</span>
           </div>
       <div className={styles.countryContainer}>
-        {countryContainer}     
+        {searchContainer}
+        {/* {countryContainer}      */}
       </div>
     </div>
     </div>
