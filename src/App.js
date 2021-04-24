@@ -1,10 +1,16 @@
 import Home from '../src/components/Home/Home'
+import {
+  BrowserRouter as Router
+} from "react-router-dom"
+
 
 function App() {
   return (
-    <div>
-      <Home />
-    </div>
+    <Router>
+      <div>
+        <Home />
+      </div>
+    </Router>
   );
 }
 

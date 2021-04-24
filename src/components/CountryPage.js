@@ -1,9 +1,9 @@
 import React from 'react'
 
-function CountryPage() {
+function CountryPage(props) {
     return (
         <div>
-            Country yayyy
+            {props.name} yayyy
         </div>
     )
 }

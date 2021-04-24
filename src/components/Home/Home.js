@@ -3,6 +3,12 @@ import { BiMoon,BiSearch,BiChevronDown,BiSun } from "react-icons/bi";
 import {useState, useEffect} from 'react'
 import axios from 'axios';
 import CountryCard from '../../components/countryCard/CountryCard'
+import {
+  BrowserRouter as Router,
+  Switch, Route, Link
+} from "react-router-dom"
+import CountryPage from '../CountryPage';
+
 
 function App() {
 
@@ -44,8 +50,8 @@ function App() {
     // })
 
     const searchFilter = allCountries.filter(country => country.name.toLowerCase().startsWith(search))
-    const searchContainer = searchFilter.map(country => {
-      return <CountryCard 
+    const searchContainer = searchFilter.map((country,id) => {
+      return <Link style={{ textDecoration: 'none' }} to={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}><CountryCard 
       // key={country.callingCodes[0]}
       name ={country.name}
       population = {country.population}
@@ -53,6 +59,18 @@ function App() {
       region = {country.region}
       capital={country.capital}
       />
+      </Link> 
+    })
+
+
+    const urlPatters = searchFilter.map(country => {
+      return <Switch>
+          <Route exact path={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}
+    
+          >
+              <CountryPage name={country.name}/>
+          </Route>
+      </Switch>
     })
 
  useEffect(() =>fetchAllCountries(BASE_URL),[])
@@ -98,6 +116,7 @@ const changeLabel = (region) => {
         </div>
         </div>
       </header>
+      {urlPatters}
     <div className={styles.App}>
       <div className={styles.filterbox}>
         <div className={styles.searchBar}>
