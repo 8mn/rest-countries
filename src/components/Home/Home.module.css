@@ -61,10 +61,19 @@
 .toggleDark{
     display: flex;
     align-items: center;
-    width: 13rem;
+    width: 15rem;
     /* background-color: burlywood ; */
     justify-content: space-around;
     cursor: pointer;
+    /* background-color: wheat; */
+    padding: .5rem;
+}
+
+.toggleDark:hover{
+    /* background-color: wheat; */
+    border-radius: 99px;
+    /* padding: .7rem .2rem; */
+    border: 1px solid rgba(128, 128, 128, 0.164);
 }
 
 
@@ -110,14 +119,6 @@ input:focus{
 
 
 .options{
-    /* display: flex;
-    margin-top: 3px;
-    flex-direction: column;
-    border: 2px solid black;
-    /* padding-left: 15px; */
-    /* height: 22rem;
-    justify-content: space-evenly;
-    border-radius: 8px; */ 
     display:none;
 }
 
@@ -146,14 +147,8 @@ input:focus{
     cursor: pointer;
     margin: auto;
     padding: 4px;
-    /* border: 2px solid red; */
     width: 90%;
 }
-
-/* .options span:hover{
-    background-color: gray;
-    border-radius: 8px;
-} */
 
 
 
