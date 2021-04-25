@@ -10,47 +10,36 @@ import {
 import CountryPage from '../CountryPage';
 
 
-function App() {
+function Home(props) {
 
 
 
   const[showFilters,setshowFilters] = useState(false)
 
-  const [allCountries,setAllcountries] = useState([])
+  // const [allCountries,setAllcountries] = useState([])
   const[filter,setfilter] = useState('Filter by Region')
   const[mode,setmode] = useState('Dark Mode')
   const[search,setsearch] = useState('')
   const[icon,seticon] = useState('Dark')
 
 
-  const BASE_URL = "https://restcountries.eu/rest/v2/all"
+  // const BASE_URL = "https://restcountries.eu/rest/v2/all"
 
   let FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${filter}`
 
 
 
-  const fetchAllCountries = (url) => {
-    axios.get(url)
-    .then(res => {
-      console.log(res.data)
-      setAllcountries(res.data)})
-    .catch(err => alert(err))
-    }
+  // const fetchAllCountries = (url) => {
+  //   axios.get(url)
+  //   .then(res => {
+  //     console.log(res.data)
+  //     setAllcountries(res.data)})
+  //   .catch(err => alert(err))
+  //   }
 
 
-    // const countryContainer = allCountries.map(country => {
-    //   return <CountryCard 
-    //   // key={country.callingCodes[0]}
-    //   name ={country.name}
-    //   population = {country.population}
-    //   flag = {country.flag}
-    //   region = {country.region}
-    //   capital={country.capital}
-    //   />
-    // })
-
-    const searchFilter = allCountries.filter(country => country.name.toLowerCase().startsWith(search))
-    const searchContainer = searchFilter.map((country,id) => {
+    const searchFilter = props.allCountries.filter(country => country.name.toLowerCase().startsWith(search))
+    const searchContainer = searchFilter.map((country) => {
       return <Link style={{ textDecoration: 'none' }} to={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}><CountryCard 
       // key={country.callingCodes[0]}
       name ={country.name}
@@ -63,17 +52,17 @@ function App() {
     })
 
 
-    const urlPatters = searchFilter.map(country => {
-      return <Switch>
-          <Route exact path={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}
-    
-          >
-              <CountryPage name={country.name}/>
-          </Route>
-      </Switch>
-    })
+    // const urlPatters = searchFilter.map(country => {
+    //   return <Switch>
+    //       <Route exact path={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}
+          
+    //       >
+    //           <CountryPage name={country.name}/>
+    //       </Route>
+    //   </Switch>
+    // })
 
- useEffect(() =>fetchAllCountries(BASE_URL),[])
+//  useEffect(() =>fetchAllCountries(BASE_URL),[])
 
 
 const displayFilters = () => {
@@ -96,11 +85,11 @@ const changeLabel = (region) => {
   setshowFilters(!showFilters)
   setfilter(region)
   if(region === 'All' || region === 'Filter by Region'){
-    FILTER_BY_REGION = BASE_URL
+    FILTER_BY_REGION = props.BASE_URL
   }else{
     FILTER_BY_REGION = `https://restcountries.eu/rest/v2/region/${region.toLowerCase()}`
   }
-  fetchAllCountries(FILTER_BY_REGION)
+  props.fetchAllCountries(FILTER_BY_REGION)
 }
 
   return (
@@ -109,14 +98,12 @@ const changeLabel = (region) => {
         <div className={styles.headerContent}>
         <span className={styles.Heading}> Where in the world? </span>
         <div className={styles.toggleDark} onClick={toggleMode}>
-          {/* <BiMoon /> */}
           {icon === "Dark"? <BiSun />: <BiMoon />}
-          {/* {"Dark Mode" ? <BiSun />:<BiMoon />} */}
           {mode}
         </div>
         </div>
       </header>
-      {urlPatters}
+      {/* {urlPatters} */}
     <div className={styles.App}>
       <div className={styles.filterbox}>
         <div className={styles.searchBar}>
@@ -147,4 +134,4 @@ const changeLabel = (region) => {
   );
 }
 
-export default App;
+export default Home;
