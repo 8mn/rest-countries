@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router,Switch,Route
 } from "react-router-dom"
 import axios from 'axios'
-import CountryPage from '../src/components/CountryPage'
+import CountryPage from './components/CountryPage/CountryPage'
 
 
 function App() {
@@ -34,7 +34,18 @@ function App() {
       return <Route exact path={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}
           
           >
-              <CountryPage name={country.name}/>
+              <CountryPage 
+              name={country.name}
+              flag={country.flag}
+              nativeName={country.nativeName}
+              population={country.population}
+              region={country.region}
+              subRegion={country.subregion}
+              capital={country.capital}
+              topLevelDomain={country.topLevelDomain}
+              currencies={country.currencies}
+              languages={country.languages}
+              borderCountries={country.borders}/>
           </Route>
     })
 

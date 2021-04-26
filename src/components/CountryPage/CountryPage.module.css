@@ -1,0 +1,56 @@
+.container{
+    /* background-color: burlywood; */
+    width: 90%;
+    margin: auto;
+    /* background-color: darkgray; */
+    overflow-y: hidden;
+    margin-top: 8rem;
+}
+
+.CountryInfo{
+    width: 100%;
+    margin-top: 9rem;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    width: 40%;
+    /* border: 2px solid white; */
+}
+
+.info{
+    /* background-color: yellow; */
+    width: 50%;
+}
+
+button{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 1.4rem 4rem;
+    font-size: 2rem;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    /* box-shadow: 0px 5px 19px -19px rgb(0, 0, 0); */
+    /* box-shadow: 1px 1px 14px 2px grey; */
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 15px #ccc;
+}
+
+button span{
+    padding-left: .6rem;
+}
+
+.infoList{
+    margin-top: 2rem;
+}
+
+ul span{
+    font-weight: 900;
+}

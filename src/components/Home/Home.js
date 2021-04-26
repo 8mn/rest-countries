@@ -1,13 +1,12 @@
 import styles from './Home.module.css';
-import { BiMoon,BiSearch,BiChevronDown,BiSun } from "react-icons/bi";
-import {useState, useEffect} from 'react'
-import axios from 'axios';
+import {BiSearch,BiChevronDown } from "react-icons/bi";
+import {useState} from 'react'
+// import axios from 'axios';
 import CountryCard from '../../components/countryCard/CountryCard'
-import {
-  BrowserRouter as Router,
-  Switch, Route, Link
+import {Link
 } from "react-router-dom"
-import CountryPage from '../CountryPage';
+import Header from '../header/Header';
+// import CountryPage from '../CountryPage';
 
 
 function Home(props) {
@@ -18,9 +17,9 @@ function Home(props) {
 
   // const [allCountries,setAllcountries] = useState([])
   const[filter,setfilter] = useState('Filter by Region')
-  const[mode,setmode] = useState('Dark Mode')
+  // const[mode,setmode] = useState('Dark Mode')
   const[search,setsearch] = useState('')
-  const[icon,seticon] = useState('Dark')
+  // const[icon,seticon] = useState('Dark')
 
 
   // const BASE_URL = "https://restcountries.eu/rest/v2/all"
@@ -41,7 +40,7 @@ function Home(props) {
     const searchFilter = props.allCountries.filter(country => country.name.toLowerCase().startsWith(search))
     const searchContainer = searchFilter.map((country) => {
       return <Link style={{ textDecoration: 'none' }} to={`/${country.name}`.replace(/\s+/g, '-').toLowerCase().replace(',','').replace(/[()]/g, '')}><CountryCard 
-      // key={country.callingCodes[0]}
+      key={`${country.name}${country.population}`}
       name ={country.name}
       population = {country.population}
       flag = {country.flag}
@@ -70,15 +69,15 @@ const displayFilters = () => {
 }
 
 
-const toggleMode = () => {
-  if (mode === 'Light Mode'){
-    setmode('Dark Mode')
-    seticon('Light')
-  }else{
-    setmode('Light Mode')
-    seticon('Dark')
-  }
-}
+// const toggleMode = () => {
+//   if (mode === 'Light Mode'){
+//     setmode('Dark Mode')
+//     seticon('Light')
+//   }else{
+//     setmode('Light Mode')
+//     seticon('Dark')
+//   }
+// }
 
 
 const changeLabel = (region) => {
@@ -94,16 +93,7 @@ const changeLabel = (region) => {
 
   return (
     <div>
-      <header className={styles.Header}>
-        <div className={styles.headerContent}>
-        <span className={styles.Heading}> Where in the world? </span>
-        <div className={styles.toggleDark} onClick={toggleMode}>
-          {icon === "Dark"? <BiSun />: <BiMoon />}
-          {mode}
-        </div>
-        </div>
-      </header>
-      {/* {urlPatters} */}
+      <Header />
     <div className={styles.App}>
       <div className={styles.filterbox}>
         <div className={styles.searchBar}>
