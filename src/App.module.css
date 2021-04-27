@@ -168,12 +168,13 @@ input:focus{
 /* country container */
 
 
-.countryContainer{
+/* .countryContainer{
     z-index: 99;
     /* padding: 3rem; */
-    padding-top: 10rem;
+    /* padding-top: 10rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     height: max-content;
-}
+    background-color: rosybrown; */
+/* } */ 

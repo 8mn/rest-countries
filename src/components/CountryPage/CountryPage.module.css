@@ -1,15 +1,15 @@
 .container{
     /* background-color: burlywood; */
-    width: 90%;
+    width: 92%;
     margin: auto;
     /* background-color: darkgray; */
     overflow-y: hidden;
-    margin-top: 8rem;
+    margin-top: 5rem;
 }
 
 .CountryInfo{
     width: 100%;
-    margin-top: 9rem;
+    margin-top: 7rem;
     /* border: 2px solid red; */
     display: flex;
     justify-content: space-between;
@@ -17,12 +17,18 @@
 
 img{
     width: 40%;
-    /* border: 2px solid white; */
+    box-shadow: 0 0 15px #ccc;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    /* border: 1px solid black; */
 }
 
 .info{
     /* background-color: yellow; */
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 button{
@@ -49,8 +55,20 @@ button span{
 
 .infoList{
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 40%;
 }
 
 ul span{
     font-weight: 900;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul li{
+    margin-top: .7rem;
 }

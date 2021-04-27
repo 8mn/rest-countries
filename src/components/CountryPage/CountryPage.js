@@ -2,14 +2,19 @@ import React from 'react'
 import Header from '../header/Header'
 import { BiArrowBack } from "react-icons/bi";
 import classes from './CountryPage.module.css'
+import {Link
+} from "react-router-dom"
+
 
 function CountryPage(props) {
     return (
         <div>
             <Header />
             <div className={classes.container}>
+                <Link to='/'>
                 <button><BiArrowBack /> 
                 <span> Back </span></button>
+                </Link>
                 <div className={classes.CountryInfo}>
                     <img src={props.flag} alt="Country flag"/>
                     <span className={classes.info}>

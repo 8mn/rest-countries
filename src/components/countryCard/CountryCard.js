@@ -20,7 +20,7 @@ function CountryCard(props) {
 
     return(
         <div className={classes.country} onClick={displayCountryPage}>
-            <img src={props.flag} alt="Country flag"/>
+            <img src={props.flag} alt={`${props.name}flag`} className={classes.flag}/>
             <div className={classes.countryInfo}>
             <span className={classes.countryName}>{props.name}</span>
               <ul className={classes.InfoList}>
