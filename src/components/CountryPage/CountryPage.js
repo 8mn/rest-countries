@@ -12,7 +12,7 @@ function CountryPage(props) {
             <Header />
             <div className={classes.container}>
                 <Link to='/'>
-                <button><BiArrowBack /> 
+                <button className={classes.backBtn}><BiArrowBack /> 
                 <span> Back </span></button>
                 </Link>
                 <div className={classes.CountryInfo}>
@@ -29,6 +29,14 @@ function CountryPage(props) {
                             <li><span> Currencies: </span>{props.currencies.map(currency => <> {currency.name} </>)}</li>
                             <li><span> Languages: </span>{props.languages.map(lang => <> {lang.name},</>)}</li>
                         </ul>
+                            <ul>
+                                <div className={classes.borderCountryContainer}>
+                                    Border Countries:
+                                    <div className={classes.border}>
+                                        {props.borderCountries.map(border => <button className={classes.borderCountry}>{border} </button>)}
+                                    </div>
+                                </div>
+                            </ul>
                     </span>
                 </div>
             </div>

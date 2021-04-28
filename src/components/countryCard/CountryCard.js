@@ -7,19 +7,9 @@ import classes from './countryCard.module.css'
 function CountryCard(props) {
 
 
-    const displayCountryPage = () => {
-        console.log(props.name)
-        // <Switch>
-        //     <Route path=`/${props.name}`>
-
-        //     </Route>
-        // </Switch>
-        
-    }
-
 
     return(
-        <div className={classes.country} onClick={displayCountryPage}>
+        <div className={classes.country} >
             <img src={props.flag} alt={`${props.name}flag`} className={classes.flag}/>
             <div className={classes.countryInfo}>
             <span className={classes.countryName}>{props.name}</span>
