@@ -56,7 +56,7 @@ React app which Lists all countries using REST API
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 
-##Screenshots
+### Screenshots
 
 <img src="./Countries.png" alt="Logo" >
 <hr>
