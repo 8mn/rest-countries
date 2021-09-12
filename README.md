@@ -56,10 +56,16 @@ React app which Lists all countries using REST API
 - Click on a country to see more detailed information on a separate page
 - Click through to the border countries on the detail page
 
+##Screenshots
+
+<img src="./Countries.png" alt="Logo" >
+<hr>
+<img src="./india.png" alt="Logo" >
+
 ### Built With
 
 * ReactJS
-* https://restcountries.eu/ API
+* API: https://restcountries.eu/ 
 
 
 
