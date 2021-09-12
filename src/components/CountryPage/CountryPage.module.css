@@ -103,3 +103,21 @@ ul li{
     -webkit-box-shadow: 0 0 3px #ccc;
     box-shadow: 0 0 5px #ccc;
 }
+
+
+@media screen and (max-width:500px) {
+    .CountryInfo{
+        flex-direction: column;
+    }
+    .info{
+        width: 90%;
+    }
+    img{
+        width: 90%;
+    }
+    .borderCountryContainer{
+        width: 100%;
+        height: 12rem;
+        margin-top: 4rem;
+    }
+}
