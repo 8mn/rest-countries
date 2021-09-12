@@ -69,16 +69,6 @@ const displayFilters = () => {
 }
 
 
-// const toggleMode = () => {
-//   if (mode === 'Light Mode'){
-//     setmode('Dark Mode')
-//     seticon('Light')
-//   }else{
-//     setmode('Light Mode')
-//     seticon('Dark')
-//   }
-// }
-
 
 const changeLabel = (region) => {
   setshowFilters(!showFilters)

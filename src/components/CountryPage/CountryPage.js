@@ -62,18 +62,16 @@ function CountryPage(props) {
 							</ul>
 							<ul>
 								<div className={classes.borderCountryContainer}>
+									{props.borderCountries.length ? "Border Countries" : "No Border Countries"}
 									{props.borderCountries.length ? (
 										<div className={classes.border}>
-                                           {"Border Countries"}
 											{props.borderCountries.map((border) => (
 												<button className={classes.borderCountry}>
 													{border}{" "}
 												</button>
 											))}
 										</div>
-									) : (
-										<button className={classes.borderCountry}>NO BORDER COUNTRY</button>
-									)}
+									) : null}
 								</div>
 							</ul>
 						</span>
