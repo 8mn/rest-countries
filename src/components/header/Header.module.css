@@ -36,6 +36,7 @@
     cursor: pointer;
     /* background-color: wheat; */
     padding: .5rem;
+    display: none;
 }
 
 .toggleDark:hover{

@@ -35,6 +35,7 @@ function App() {
           
           >
               <CountryPage 
+              country={country}
               name={country.name}
               flag={country.flag}
               nativeName={country.nativeName}

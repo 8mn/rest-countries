@@ -25,10 +25,10 @@ function Header() {
         <header className={classes.Header}>
         <div className={classes.headerContent}>
         <span className={classes.Heading}> Where in the world? </span>
-        <div className={classes.toggleDark} onClick={toggleMode}>
+        {/* <div className={classes.toggleDark} onClick={toggleMode}>
           {icon === "Dark"? <BiSun />: <BiMoon />}
           {mode}
-        </div>
+        </div> */}
         </div>
       </header>
     )
